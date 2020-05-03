@@ -15,19 +15,34 @@ namespace solver {
 
 	class RealVariable {
 
-		double num;
-
 	public:
 
+		double a=0;
+		double b=1;
+		double c=0;
+
+	
+
 		RealVariable() {
+			this->a = 0;
+			this->b = 1;
+			this->c = 0;
 		
 		}
 		~RealVariable() {
 
 		}
 
-		RealVariable(double d) {
-			this->num = d;
+		RealVariable(double a) {
+			this->a = a;
+			this->b = 0;
+			this->c = 0;
+		}
+
+		RealVariable(double a, double b, double c) {
+			this->a = a;
+			this->b = b;
+			this->c = c;
 		}
 
 		
@@ -63,9 +78,14 @@ namespace solver {
 
 	class ComplexVariable {
 
-		complex<double> num;
-
 	public:
+
+		complex<double> a=0.0;
+		complex<double> b=1.0;
+		complex<double> c=0.0;
+		
+
+	
 		ComplexVariable() {
 
 		}
@@ -73,7 +93,7 @@ namespace solver {
 
 		}
 		ComplexVariable(complex<double> c) {
-			this->num = c;
+			this->c = c;
 		}
 		
 
@@ -99,7 +119,7 @@ namespace solver {
 		const ComplexVariable operator==(const ComplexVariable& real) const;
 		friend const ComplexVariable operator==(complex<double> other, const ComplexVariable& real2);
 
-		const ComplexVariable operator^( const complex<double> other) const;
+		const ComplexVariable operator^( double other) const;
 
 
 
