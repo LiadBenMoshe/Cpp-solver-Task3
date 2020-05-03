@@ -326,6 +326,12 @@ namespace solver {
 		c1.a = 1.0;
 		c1.b = 0.0;
 		c1.c = this->c;
+
+		if (other == 0) {
+			c1.a = 0;
+			c1.b = 0;
+			c1.c = 1;
+		}
 		return c1;
 	}
 
