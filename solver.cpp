@@ -46,6 +46,9 @@ namespace solver {
 		complex<double>c3=-1.0;
 
 		if (c1.a ==0.0) {
+			if (c1.b == 0.0) {
+				throw runtime_error("cannot solve this problem");
+			}
 			
 
 			return (c3 * c1.c / c1.b);
