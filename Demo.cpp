@@ -13,7 +13,7 @@
 using namespace std;
 using solver::solve, solver::RealVariable, solver::ComplexVariable;
 
-/*int main() {
+int main() {
     RealVariable x;
 
     cout << solve(2*x-4 == 10) << endl;  // 7
@@ -39,7 +39,9 @@ using solver::solve, solver::RealVariable, solver::ComplexVariable;
     cout << solve(y+5i == 2*y+3i) << endl;   // 0+2i
 	if (0 == -0) {
 		cout << "ok" << endl;
+
 	}
+	cout << solve(2 * (x ^ 2) == 18) << endl;
 
     return 0;
-}*/
+}

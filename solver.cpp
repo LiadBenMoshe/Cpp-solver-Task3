@@ -24,6 +24,7 @@ namespace solver {
 			double discriminant = r1.b * r1.b - (4 * r1.a * r1.c);
 			if (discriminant > 0) {
 				double x1 = (-r1.b + sqrt(discriminant)) / (2 * r1.a);
+				cout << r1.b << " u " << r1.c;
 				cout<<"  also: "<<(-r1.b - sqrt(discriminant)) / (2 * r1.a)<<"  and : ";
 				return x1;
 				
@@ -70,17 +71,11 @@ namespace solver {
 
 	const RealVariable operator*(double other, const RealVariable& real) {//(         *          )
 		RealVariable r1;
-		if (real.a != 0)
-		{
-			r1.a = real.a * other;
-		}
-		if (real.b != 0) {
-			r1.b = real.b * other;
-		}
 		
-		if (real.c != 0) {
-			r1.c = real.c * other;
-		}
+		r1.a = real.a * other;
+		r1.b = real.b * other;
+		r1.c = real.c * other;
+		
 		return r1;
 	
 	}
