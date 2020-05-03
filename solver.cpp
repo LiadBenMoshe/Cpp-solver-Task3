@@ -16,7 +16,8 @@ namespace solver {
 
 	double solve(const RealVariable& r1) {
 		if (r1.a == 0) {
-			
+			if (r1.b == 0)
+				throw runtime_error("cannot solve this problem");
 			return ((-1)*r1.c / r1.b);
 		}
 		else {
@@ -73,8 +74,7 @@ namespace solver {
 		if (real.b != 0) {
 			r1.b = real.b * other;
 		}
-		else
-			r1.b = other;
+		
 		if (real.c != 0) {
 			r1.c = real.c * other;
 		}
@@ -89,8 +89,7 @@ namespace solver {
 		if (this->b != 0) {
 			r1.b = this->b * other;
 		}
-		else
-			r1.b = other;
+		
 		if (this->c != 0) {
 			r1.c = this->c * other;
 		}
